@@ -1,0 +1,126 @@
+---
+title: "Modules 07 and 08 HW"
+author: "C. Williams"
+date: "2/7/2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Challenge 7.1
+```{r library, include=FALSE}
+library(stringr)
+```
+```{r ABE}
+v <- "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal."
+v
+```
+```{r a str}
+a<-str_split(v, boundary("word"), n=Inf, simplify=FALSE)
+a
+```
+```{r b matrix}
+b<- matrix( data= a[[1]], nrow=5, ncol=6)
+b
+```
+```{r seq}
+b[seq(from=1, to=30, by=3)]
+```
+
+## Challenge 7.2
+
+
+```{r m}
+m<- matrix(data=1:80, nrow=8, ncol=10, byrow=FALSE)
+m
+```
+``` {r x1}
+x1<- m[,c(2,3,6)]
+m
+```
+```{r x2}
+x2<- m[6:8,]
+m
+```
+```{r x3}
+x3<- m[2:6,2:9]
+m
+```
+
+
+## Challenge 7.3
+
+```{r a1}
+a<- array (data=400:1, dim= c(5,5,5,4))
+a
+```
+```{r a2}
+a[1,1,1,2]
+```
+```{r a3}
+a[2,3,2,]
+```
+```{r a4}
+a[1:5,1:5,3,3]
+```
+
+## Challenge 7.4
+
+```{r primate}
+P<- "Primates"
+H<- "Haplorhini"
+A<- "Anthropoidea"
+PL<- "Platyrrhini"
+C<- "Cebidae"
+AT<- "Atelidae"
+PI<- "Pitheciidae"
+CA<- "Catarrhini"
+CE<- "Cercopithecidae"
+HY<- "Hylobatidae"
+HO<- "Hominidae"
+T<- "Tarsioidea"
+TA<-"Tarsiidae"
+S<- "Strepsirhini"
+L<-"Lorisidea"
+lo<- "Lorisidae"
+G<-"Galagidae"
+LE<- "Lemuroidea"
+CH<- "Cheirogalaidae"
+le<- "Lepilemuridae"
+I<-"Indriidae"
+lem<-"Lemuridae"
+D<- "Daubentoniidae"
+```
+```{r taxonomy}
+p<- list(P, list(H, (list(A,list(PL,(list(C, AT, PI)),CA,(list(CE,HY,HO))),T,list(TA))),S,list(L,list(lo,G),LE,list(CH,le,I,lem,D))))
+str(p)
+```
+
+
+## Challenge 7.5
+
+
+```{r a matrix}
+a<- matrix(data= c(3,0,1,23,1,2,33,1,1,42,0,1,41,0,2), nrow=5, ncol=3, byrow=TRUE)
+a
+```
+```{r b dataf}
+b<- data.frame(a)
+b
+```
+```{r b logical}
+b$X2<- as.logical(b$X2)
+b
+```
+```{r b factor}
+b$X3<- as.factor(b$X3)
+levels(b$X3)<- c("Female","Male")
+b
+```
+```{r b str}
+str(b)
+```
