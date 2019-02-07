@@ -41,3 +41,13 @@ P<- "Primates"
 p<- list(P, list(H, (list(A,list(PL,(list(C, AT, PI)),CA,(list(CE,HY,HO))),T,list(TA))),S,list(L,list(lo,G),LE,list(CH,le,I,lem,D))))
 str(p)
 # Challenge 7.5
+a<- matrix(data= c(3,0,1,23,1,2,33,1,1,42,0,1,41,0,2), nrow=5, ncol=3, byrow=TRUE)
+a
+b<- data.frame(a)
+b
+b$X2= as.logical(b$X2)
+b
+b$X3<- factor(b$X3)
+levels(b$X3)<- c("Female","Male")
+b
+str(b)
